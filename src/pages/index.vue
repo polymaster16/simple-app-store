@@ -18,7 +18,7 @@
 </div>
 
 
-<Carousel :autoplay="1500"  class="mx-5 lg:mx-5 mt-4 " :items-to-show="isMobile? 1.3 : 3.5" :wrap-around="true">
+<Carousel   class="mx-5 lg:mx-5 mt-4 " :items-to-show="isMobile? 1.3 : 3.5" :wrap-around="true">
     <Slide v-for="app in mainstore.apps.slice(0,5)" :key="app.name">
         <div class="card w-96 bg-gray-200 dark:bg-gray-950 shadow-xl mx-2">
   <figure><img :src="CreateURL(app.maiimage)" alt="app image" class="imnx" /></figure>
