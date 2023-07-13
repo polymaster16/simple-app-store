@@ -8,7 +8,7 @@ const isMobile = ref(false);
 const sideBarVisible = ref(false)
 
 const mainstore = useMainstore()
-const loading = ref(false)
+const loading = ref(true)
 
 const checkScreenSize = () => {
   const mediaQuery = window.matchMedia('(max-width: 768px)');
@@ -25,22 +25,21 @@ async function fetchAll(){
 await mainstore.fetchApps()
 await mainstore.fetchCategories()
 await mainstore.fetchPublishers()
+loading.value = false
+
 }
 
 onBeforeMount(()=>{
   fetchAll();
 })
 
-setTimeout(() => {
-  loading.value = true
-}, 2100);
 
 
 
 </script>
 
 <template>
-  <div v-if="loading">
+  <div v-if="!loading">
   <div class="flex flex-row justify-start fontx">
   <sidebar v-if="sideBarVisible"/>
   <div class="ov ">
