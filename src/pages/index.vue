@@ -35,7 +35,7 @@
 
 
 <Carousel   class="mx-5 lg:mx-5 mt-4 " :items-to-show="isMobile? 1.1 : 2.7" :wrap-around="true">
-    <Slide v-for="app in mainstore.apps.slice(0,5)" :key="app.name">
+    <Slide v-for="app in mainstore.apps.slice(0,8)" :key="app.name">
         <div :style="`background: radial-gradient(circle at center, ${app.color}, rgba(255, 255, 255, 0));`"
         class="card w-96 bg-gray-200 dark:bg-gray-950 shadow-xl mx-2">
   <figure><img :src="CreateURL(app.maiimage)" alt="app image" class="imnx" /></figure>
