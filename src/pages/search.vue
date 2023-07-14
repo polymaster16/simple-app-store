@@ -1,6 +1,6 @@
 <template>
 
-    <div v-motion-slide-left class="flex flex-col items-center justify-center ">
+    <div v-motion-slide-left class="flex flex-col items-center justify-center">
       <div class="flex flex-col w-full px-4 py-4 bg-gray-950 ">
         <input
           v-model="searchTerm"
@@ -8,15 +8,15 @@
           placeholder="🔎 Search"
           class="px-4 py-2 woo text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary"
         />
-        <Carousel  class=" mt-4 " :items-to-show="isMobile? 3 : 8" :wrap-around="true">
-    <Slide v-for="category in mainstore.categories" :key="category.title">
-      <div style="width: fit-content;" class="bg-gray-200 text-gray-950 dark:text-gray-50 dark:bg-gray-950
- hover:bg-gray-800 hover:text-gray-50 dark:hover:bg-gray-500 py-2 px-3 rounded-3xl " size="large" >
-          <span class="text-xs">{{ category.title.slice(0,13) }}..</span>
+   
+<div  style="overflow-x: scroll; margin-bottom: -25px;" class=" mt-4 flex flex-row justify-start gap-2 " :items-to-show="isMobile? 2 : 8" :wrap-around="true">
+    <div  v-for="category in mainstore.categories" :key="category.title">
+      <div style="width: 150px;" class="bg-gray-200 text-gray-950 dark:text-gray-50 dark:bg-gray-800
+ hover:bg-gray-800 hover:text-gray-50 dark:hover:bg-gray-500 py-2 px-3 rounded-lg " size="large" >
+          <span class="text-sm">{{ category.title }}</span>
         </div>
-    </Slide>
-  </Carousel>
-
+    </div>
+  </div>
       </div>
 
 
@@ -26,6 +26,7 @@
             v-for="app in filteredApps"
             :key="app.id"
             class="p-4  rounded-md shadow-md imx"
+            @click="router.push(`/apps/${app.name}`)"
           >
             <img :src="CreateURL(app.icon)" alt="App Icon" class="w-49 h-16 mb-4" />
             <h2 class="text-lg font-semibold">{{ app.name }}</h2>
@@ -42,8 +43,9 @@
   import { ref, computed, onMounted } from 'vue';
   import {useMainstore} from '@/stores/mainstore'
 import {CreateURL} from '@/utils.js'
-  
+  import { useRouter } from 'vue-router';
 
+  const router = useRouter()
 const mainstore = useMainstore()
 
   const apps = ref([

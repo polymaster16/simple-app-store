@@ -74,7 +74,8 @@ onBeforeMount(()=>{
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
 .loader{
   height: 100vh;
   @apply flex flex-col justify-center
@@ -95,7 +96,7 @@ onBeforeMount(()=>{
 }
 
 .fontx{
-  font-family: 'Roboto';
+  font-family: 'Poppins';
   letter-spacing: 0.5px;
 }
 .ov{
