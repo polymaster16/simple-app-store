@@ -9,11 +9,11 @@
           class="px-4 py-2 woo text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary"
         />
    
-<div  style="overflow-x: scroll; margin-bottom: -25px;" class=" mt-4 flex flex-row justify-start gap-2 " :items-to-show="isMobile? 2 : 8" :wrap-around="true">
+<div  style="overflow-x: scroll; margin-bottom: 0px;" class=" mt-4 flex flex-row justify-start gap-2 " :items-to-show="isMobile? 2 : 8" :wrap-around="true">
     <div  v-for="category in mainstore.categories" :key="category.title">
       <div style="width: 150px;" class="bg-gray-200 text-gray-950 dark:text-gray-50 dark:bg-gray-800
  hover:bg-gray-800 hover:text-gray-50 dark:hover:bg-gray-500 py-2 px-3 rounded-lg " size="large" >
-          <span class="text-sm">{{ category.title }}</span>
+          <span class="text-sm">{{ category.title.slice(0,14) }}</span>
         </div>
     </div>
   </div>

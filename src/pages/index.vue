@@ -3,18 +3,14 @@
  <Navbar name="Home"/>
 
 
-<div  style="overflow-x: scroll; margin-bottom: -25px;" class="mx-5 mt-4 flex flex-row justify-start gap-2 " :items-to-show="isMobile? 2 : 8" :wrap-around="true">
+<div  style="overflow-x: scroll; margin-bottom: 0px;" class="mx-5 mt-4 flex flex-row justify-start gap-2 " :items-to-show="isMobile? 2 : 8" :wrap-around="true">
     <div  v-for="category in mainstore.categories" :key="category.title">
       <div style="width: 150px;" class="bg-gray-200 text-gray-950 dark:text-gray-50 dark:bg-gray-950
  hover:bg-gray-800 hover:text-gray-50 dark:hover:bg-gray-500 py-2 px-3 rounded-lg " size="large" >
-          <span class="text-sm">{{ category.title }}</span>
+          <span class="text-sm">{{ category.title.slice(0,14) }}</span>
         </div>
     </div>
   </div>
-
-  <div class=" flex flex-row justify-start">
-  <span class='font-bold  text-2xl ml-6 mt-6'> Featured</span>  
-</div>
 
 
 <Carousel   class="mx-5 lg:mx-5 mt-4 " :items-to-show="isMobile? 1.1 : 2.7" :wrap-around="true">
