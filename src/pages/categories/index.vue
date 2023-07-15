@@ -1,25 +1,27 @@
 <template>
     <div v-motion-slide-left>
-  <div class=" flex flex-row justify-start">
-  <span class='font-bold  text-2xl ml-6 mt-6'> Categories</span>  
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mx-4 mt-3">
-<div v-for="category in categories" 
+      <navbar name="All Categories"/>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mx-4 mt-5 mb-9">
+<RouterLink v-for="category in mainstore.categories" :to="`/categories/${category.title}`"
 class="card w-97 bg-gray-200 bg-opacity-90 dark:bg-opacity-10  shadow-xl">
   <div class="card-body">
-    <h2 class="card-title">{{ category.name }}</h2>
+    <h2 class="card-title">{{ category.title }}</h2>
     <p>{{ category.description }}</p>
     <div class="card-actions justify-end">
         <v-btn icon>👁️</v-btn>
     </div>
   </div>
-</div>
+</RouterLink>
 </div>
 </div>
 </template>
 
 <script setup>
+import Navbar from '@/components/navbar.vue';
+import {useMainstore} from '@/stores/mainstore'
 
+const mainstore = useMainstore()
 const categories = [
   {
     id: 1,

@@ -70,10 +70,6 @@ const convertToUrl = (file) => {
 onBeforeMount(()=>{
 
     zeapp.value = mainstore.apps.filter( x=> x.name === route.params.slug)[0]
-    console.log(zeapp.value)
-
-     console.log(convertToUrl(zeapp.value.apk.asset._ref))
-
     // https://cdn.sanity.io/files/ehfgybl4/production/9891d0384347ae70aaabbe08663a163c2b4408ae.apk
 
 })

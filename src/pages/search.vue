@@ -10,8 +10,9 @@
         />
    
 <div  style="overflow-x: scroll; margin-bottom: 0px;" class=" mt-4 flex flex-row justify-start gap-2 " :items-to-show="isMobile? 2 : 8" :wrap-around="true">
-    <div  v-for="category in mainstore.categories" :key="category.title">
-      <div style="width: 150px;" class="bg-gray-200 text-gray-950 dark:text-gray-50 dark:bg-gray-800
+    <div  v-for="category in mainstore.categories" :key="category.title"
+    >
+      <div  @click="selectedCategory = category" style="width: 150px;" class="bg-gray-200 text-gray-950 dark:text-gray-50 dark:bg-gray-800
  hover:bg-gray-800 hover:text-gray-50 dark:hover:bg-gray-500 py-2 px-3 rounded-lg " size="large" >
           <span class="text-sm">{{ category.title.slice(0,14) }}</span>
         </div>
@@ -40,7 +41,7 @@
   <script setup>
   import { Carousel, Slide } from 'vue3-carousel'
   import 'vue3-carousel/dist/carousel.css'
-  import { ref, computed, onMounted } from 'vue';
+  import { ref, computed, onMounted, watch } from 'vue';
   import {useMainstore} from '@/stores/mainstore'
 import {CreateURL} from '@/utils.js'
   import { useRouter } from 'vue-router';
@@ -48,47 +49,10 @@ import {CreateURL} from '@/utils.js'
   const router = useRouter()
 const mainstore = useMainstore()
 
-  const apps = ref([
-    {
-      id: 1,
-      name: 'App 1',
-      category: 'Productivity',
-      icon: 'https://www.zilliondesigns.com/blog/wp-content/uploads/Clear-App-Icon.jpg',
-    },
-    {
-      id: 2,
-      name: 'App 2',
-      category: 'Communication',
-      icon: 'https://images-platform.99static.com/Hrj0IDVBktRdEibybcXiOLqpgtE=/102x102:921x921/500x500/top/smart/99designs-contests-attachments/91/91476/attachment_91476002',
-    },
-    {
-      id: 3,
-      name: 'App 3',
-      category: 'Education',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1754/1754228.png',
-    },
-    {
-      id: 4,
-      name: 'App 4',
-      category: 'Sports',
-      icon: 'https://icon-library.com/images/sports-app-icon/sports-app-icon-15.jpg',
-    },
-    {
-      id: 5,
-      name: 'App 5',
-      category: 'Nutrition',
-      icon: 'https://cdn.dribbble.com/users/2601726/screenshots/11898736/day_005.png',
-    },
-    // Add more app objects as needed
-  ]);
-  
   const searchTerm = ref('');
+  const selectedCategory = ref()
   
-  const filteredApps = computed(() => {
-    return mainstore.apps.filter((app) =>
-      app.name.toLowerCase().includes(searchTerm.value.toLowerCase())
-    );
-  });
+  const filteredApps = ref(mainstore.apps)
 
   const isMobile = ref(false);
 
@@ -96,6 +60,15 @@ const checkScreenSize = () => {
   const mediaQuery = window.matchMedia('(max-width: 768px)');
   isMobile.value = mediaQuery.matches;
 };
+
+watch( searchTerm, ()=>{
+  filteredApps.value =  mainstore.apps.filter((app) =>
+      app.name.toLowerCase().includes(searchTerm.value.toLowerCase())
+    );
+})
+watch(selectedCategory, ()=>{
+  filteredApps.value = mainstore.apps.filter(x=> x.category._ref === selectedCategory.value._id)
+})
 
 onMounted(() => {
   checkScreenSize(); // Initial check
