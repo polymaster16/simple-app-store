@@ -3,8 +3,10 @@
 :style="`background: radial-gradient(ellipse at top, ${zeapp.color}, transparent),
  radial-gradient(ellipse at bottom, transparent, transparent);`">
     <Navbar :name="zeapp.name"/>
+<div class="flex flex-row justify-center">
+  <img loading="lazy" :src="CreateURL(zeapp.maiimage, 640,360)" alt="" srcset="">
 
-    <img loading="lazy" :src="CreateURL(zeapp.maiimage, 640,360)" alt="" srcset="">
+</div>
  <div class="mx-5 my-5 flex flex-col gap-2">
 
     <div style="margin-top: -30px" class=" bg-gray-100 dark:bg-slate-950 flex flex-row justify-start p-5 mb-3 shadow-sm  rounded-lg">
