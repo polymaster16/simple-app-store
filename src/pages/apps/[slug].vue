@@ -9,13 +9,34 @@
 </div>
  <div class="mx-5 my-5 flex flex-col gap-2">
 
-    <div style="margin-top: -30px" class=" bg-gray-100 dark:bg-slate-950 flex flex-row justify-start p-5 mb-3 shadow-sm  rounded-lg">
+    <div style="margin-top: -30px" class=" bg-gray-100 dark:bg-slate-950 flex flex-row justify-start p-5 mb-2 shadow-sm  rounded-lg">
   <img width="75" class="rouded-lg"
   loading="lazy" :src="CreateURL(zeapp.icon)" alt="" srcset="">
   <div class="flex flex-col ml-4 mt-3">
-    <p  > {{ zeapp.name }}</p>
+    <p  class="font-bold"> {{ zeapp.name }}</p>
     <p class="text-sm mt-1" > {{ mainstore.categories.filter(x => x._id === zeapp.category._ref)[0].title }}</p>
   </div>
+  <div class="flex flex-row justify-end ml-9">
+ <span>0👤</span>
+ <span>0⭐</span>
+  </div>
+    </div>
+
+    <a class="btn text-gray-950 dark:text-white mb-2"
+  :href="convertToUrl(zeapp.apk.asset._ref)">
+    📩 Download Now</a>
+
+
+    <div v-if="zeapp.presentation" class="bg-base-200 px-4 py-8 rounded-lg">
+      <div class="flex flex-row justify-center">
+        <iframe width="477" height="280" src="https://www.youtube.com/embed/6Lsz6FK0uIM" title="Candy Crush Saga - First Ever Level" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div>
+
+      <div 
+       class="grid grid-cols-2 gap-4 mt-4">
+        <img v-for="image in zeapp.presentation"
+        loading="lazy"
+         :src="CreateURL(image.asset._ref)" alt="">
+      </div>
     </div>
 
     <div class="collapse collapse-arrow bg-base-200">
@@ -28,9 +49,7 @@
  </div>
 </div>
 
- <a class="btn text-gray-950 dark:text-white mt-2"
-  :href="convertToUrl(zeapp.apk.asset._ref)">
-    📩 Download Now</a>
+
 
 
     <p class="font-bold mt-8">Other actions: </p> 
