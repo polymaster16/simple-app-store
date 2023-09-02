@@ -28,11 +28,11 @@
 
 
     <div v-if="zeapp.presentation" class="bg-base-200 px-4 py-8 rounded-lg">
-      <div class="flex flex-row justify-center">
-        <iframe width="477" height="280" src="https://www.youtube.com/embed/6Lsz6FK0uIM" title="Candy Crush Saga - First Ever Level" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div>
+      <!-- <div class="flex flex-row justify-center">
+        <iframe width="477" height="280" src="https://www.youtube.com/embed/6Lsz6FK0uIM" title="Candy Crush Saga - First Ever Level" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div> -->
 
       <div 
-       class="grid grid-cols-2 gap-4 mt-4">
+       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
         <img v-for="image in zeapp.presentation"
         loading="lazy"
          :src="CreateURL(image.asset._ref)" alt="">
