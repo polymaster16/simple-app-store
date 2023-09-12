@@ -282,7 +282,7 @@
       <div v-if="slide7" class="mt-8 mx-8">
         <p class="text-xl font-bold mb-4">Download your pdf</p>
   
-      <v-btn color="black" @click="togglePreview(); convertToPdf();">🤗 Download</v-btn>
+      <v-btn color="black" @click="convertToPdf();">🤗 Download</v-btn>
       <div style="position: absolute;" class="flex flex-row gap-4 justify-start mt-12">
       <v-btn color="black" icon @click="togglePreview">👁️ </v-btn>
     </div>
@@ -588,14 +588,14 @@
   }
 
   const convertToPdf = () => {
-
+    togglePreview(); 
     const options = {
-      filename: 'william_assignment_submission.pdf',
+      filename: `${name.value} resume.pdf`,
       html2canvas: {},
       jsPDF: { format: 'a4' },
     };
   
-    html2pdf().set(options).from(html).save();
+    html2pdf().set(options).from(html.value).save();
   };
   </script>
   
