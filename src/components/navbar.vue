@@ -47,11 +47,12 @@ import { defineProps, ref } from 'vue';
         { title: '🔎 Search', link: '/search' },
         { title: '🍱 Categories', link:'/categories' },
         { title: '👤 Profiles', link:'/profiles' },
+        { title: '👤 Builder', link:'/builder' },
       ])
 
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>

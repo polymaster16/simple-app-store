@@ -16,10 +16,10 @@ import * as directives from 'vuetify/directives'
 
 //IconsRiHandHeartFill
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { SiHellofresh, BiWhatsapp, BiFacebook, BiYoutube, BiTwitter, IoHome, FaSearchengin, HiSolidMenuAlt3   } from "oh-vue-icons/icons";
+import { SiHellofresh, BiWhatsapp, BiFacebook, BiYoutube, BiTwitter, IoHome, FaSearchengin, HiSolidMenuAlt3, GiStairsGoal    } from "oh-vue-icons/icons";
 
 
-addIcons( BiFacebook, BiYoutube, BiTwitter, SiHellofresh, BiWhatsapp, IoHome, FaSearchengin, HiSolidMenuAlt3   );
+addIcons( BiFacebook, BiYoutube, BiTwitter, SiHellofresh, BiWhatsapp, IoHome, FaSearchengin, HiSolidMenuAlt3, GiStairsGoal    );
 
 const vuetify = createVuetify({
     components,
