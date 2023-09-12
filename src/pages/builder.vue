@@ -117,6 +117,10 @@
      color="grey-darken-4" icon>+</v-btn>
     </div>
 
+       
+    <div style="position: absolute;" class="flex flex-row gap-4 justify-start mt-7">
+      <v-btn color="black" icon @click="togglePreview">👁️</v-btn>
+    </div>
     <div class="flex flex-row gap-4 mt-8 justify-end">
         <v-btn color="grey-darken-4" @click="slide3=false; slide2=true">🔙 Back</v-btn>
 
@@ -194,6 +198,10 @@
      color="grey-darken-4" icon>+</v-btn>
     </div>
 
+       
+    <div style="position: absolute;" class="flex flex-row gap-4 justify-start mt-7">
+      <v-btn color="black" icon @click="togglePreview">👁️</v-btn>
+    </div>
     <div class="flex flex-row gap-4 justify-end mt-8">
         <v-btn color="grey-darken-4" @click="slide4 = false; slide3 = true;">🔙 Back</v-btn>
 
@@ -223,8 +231,8 @@
      color="grey-darken-4" icon>+</v-btn>
     </div>
    
-    <div style="position: absolute;" class="flex flex-row gap-4 justify-start">
-      <v-btn color="black" @click="togglePreview">👁️ Preview</v-btn>
+    <div style="position: absolute;" class="flex flex-row gap-4 justify-start mt-[-2px]">
+      <v-btn icon color="black" @click="togglePreview">👁️</v-btn>
     </div>
     <div class="flex flex-row gap-4 justify-end">
         <v-btn color="grey-darken-4" @click="slide5 = false; slide4 = true;">🔙 Back</v-btn>
@@ -256,8 +264,8 @@
     </div>
 
     
-<div style="position: absolute;" class="flex flex-row gap-4 justify-start">
-      <v-btn color="black" @click="togglePreview">👁️ Preview</v-btn>
+<div style="position: absolute;" class="flex flex-row gap-4 justify-start mt-[-2px]">
+      <v-btn color="black" icon @click="togglePreview">👁️ </v-btn>
     </div>
     <div class="flex flex-row gap-4 justify-end">
         <v-btn color="grey-darken-4" @click="slide6 = false; slide5 = true;">🔙 Back</v-btn>
@@ -276,7 +284,7 @@
   
       <v-btn color="black" @click="togglePreview(); convertToPdf();">🤗 Download</v-btn>
       <div style="position: absolute;" class="flex flex-row gap-4 justify-start mt-12">
-      <v-btn color="black" @click="togglePreview">👁️ Preview</v-btn>
+      <v-btn color="black" icon @click="togglePreview">👁️ </v-btn>
     </div>
       <div class="flex flex-row gap-4 justify-end mb-14">
         <v-btn color="grey-darken-4" @click="slide7 = false; slide6 = true;">🔙 Back</v-btn>
@@ -490,7 +498,7 @@
         
 
             <div class="subsection">
-                <div class="subsection-title">${experiences.value.length>0 ?experiences.value[0].name :''}</div>
+                <div class="subsection-title">${experiences.value.length>0 ?experiences.value[0].title :''}</div>
                 ${experiences.value.length>0 ?experiences.value[0].company :''}${experiences.value.length>0 ?', ' :''} ${experiences.value.length>0 ?experiences.value[0].town :''}${experiences.value.length>0 ?', ' :''} ${experiences.value.length>0 ?experiences.value[0].country :''}
                 <div class="date"> ${experiences.value.length>0 ?experiences.value[0].start :''}  ${experiences.value.length>0 ?'->' :''}  ${experiences.value.length>0 ?experiences.value[0].end :''}</div>
                 <ul>
@@ -499,7 +507,7 @@
                 </ul>
             </div>
             <div class="subsection">
-                <div class="subsection-title">${experiences.value.length>1 ?experiences.value[1].name :''}</div>
+                <div class="subsection-title">${experiences.value.length>1 ?experiences.value[1].title :''}</div>
                 ${experiences.value.length>1 ?experiences.value[1].company :''}${experiences.value.length>1 ?', ' :''} ${experiences.value.length>1 ?experiences.value[1].town :''}${experiences.value.length>1 ?', ' :''} ${experiences.value.length>1 ?experiences.value[1].country :''}
                 <div class="date"> ${experiences.value.length>1 ?experiences.value[1].start :''}  ${experiences.value.length>1 ?'->' :''}  ${experiences.value.length>1 ?experiences.value[1].end :''}</div>
                 <ul>
@@ -509,7 +517,7 @@
             </div>
 
             <div class="subsection">
-                <div class="subsection-title">${experiences.value.length>2 ?experiences.value[2].name :''}</div>
+                <div class="subsection-title">${experiences.value.length>2 ?experiences.value[2].title :''}</div>
                 ${experiences.value.length>2 ?experiences.value[2].company :''}${experiences.value.length>2 ?', ' :''} ${experiences.value.length>2 ?experiences.value[2].town :''}${experiences.value.length>2 ?', ' :''} ${experiences.value.length>2 ?experiences.value[2].country :''}
                 <div class="date"> ${experiences.value.length>2 ?experiences.value[2].start :''}  ${experiences.value.length>2 ?'->' :''}  ${experiences.value.length>2 ?experiences.value[2].end :''}</div>
                 <ul>
@@ -519,7 +527,7 @@
             </div>
 
             <div class="subsection">
-                <div class="subsection-title">${experiences.value.length>3 ?experiences.value[3].name :''}</div>
+                <div class="subsection-title">${experiences.value.length>3 ?experiences.value[3].title :''}</div>
                 ${experiences.value.length>3 ?experiences.value[3].company :''}${experiences.value.length>3 ?', ' :''} ${experiences.value.length>3 ?experiences.value[3].town :''}${experiences.value.length>3 ?', ' :''} ${experiences.value.length>3 ?experiences.value[3].country :''}
                 <div class="date"> ${experiences.value.length>3 ?experiences.value[3].start :''}  ${experiences.value.length>3 ?'->' :''}  ${experiences.value.length>3 ?experiences.value[3].end :''}</div>
                 <ul>
@@ -529,7 +537,7 @@
             </div>
 
             <div class="subsection">
-                <div class="subsection-title">${experiences.value.length>4 ?experiences.value[4].name :''}</div>
+                <div class="subsection-title">${experiences.value.length>4 ?experiences.value[4].title :''}</div>
                 ${experiences.value.length>4 ?experiences.value[4].company :''}${experiences.value.length>4 ?', ' :''} ${experiences.value.length>4 ?experiences.value[4].town :''}${experiences.value.length>4 ?', ' :''} ${experiences.value.length>4 ?experiences.value[4].country :''}
                 <div class="date"> ${experiences.value.length>4 ?experiences.value[4].start :''}  ${experiences.value.length>4 ?'->' :''}  ${experiences.value.length>4 ?experiences.value[4].end :''}</div>
                 <ul>
