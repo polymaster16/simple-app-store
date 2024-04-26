@@ -113,7 +113,7 @@
   </div>
 </div>
   <div class=" mt-4 flex flex-row justify-center">
-    <v-btn @click="degrees.push({title:'', university:'', town: '', country:'',visible: true, idm: `${(degrees.length+1)}. `, gradYear:2023, temp:'Graduated:'})"
+    <v-btn @click="degrees.push({title:'', university:'', town: '', country:'',visible: true, idm: `${(degrees.length+1)}. `, gradYear:2023, temp:'Graduated:', comma:','})"
      color="grey-darken-4" icon>+</v-btn>
     </div>
 
@@ -360,16 +360,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+            font-family: Poppins;
+            margin-left: 100px
+            margin-right: 100px
+
             padding: 0;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            padding-top: 20px;
+            margin-left: 100px
+            margin-right: 100px
+            margin-bottom: 50px;
+
         }
 
         .header {
